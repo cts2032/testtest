@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body {
+  background-image: url(./components/Image/main3.jpg);
+  background-size: 130%;
+}
