@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -38,21 +37,6 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   padding: 10px;
-  background-color: #c7e8ca;
-  color: gray;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #5d9c59;
-    color: white;
-  }
-`;
-export const Button2 = styled.button`
-  padding: 10px;
-  width: 300px;
   background-color: #c7e8ca;
   color: gray;
   border: none;

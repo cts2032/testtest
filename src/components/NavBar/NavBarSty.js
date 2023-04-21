@@ -73,7 +73,6 @@ export const Click = styled.ul`
   border-radius: 3px;
   display: flex;
   flex-direction: column;
-  padding: 0.2rem;
   box-shadow: 2px 2px 2px 2px gray;
 `;
 export const UserListForm = styled.div`
@@ -92,10 +91,11 @@ export const UserListForm = styled.div`
 export const UserList = styled.li`
   padding: 10px 0px;
   list-style: none;
-
+  background-color: #c7e8ca;
+  color: gray;
   cursor: pointer;
   &:hover {
-    text-decoration: underline;
-    color: #5d9c59;
+    background-color: #5d9c59;
+    color: white;
   }
 `;

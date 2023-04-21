@@ -5,7 +5,7 @@ import recipeImage from "../Image/pizza.jpg";
 
 const HomeForm = () => {
   return (
-    <Home>
+    <Home style={{ display: "block" }}>
       <Boards>
         <Notice>
           <div
@@ -44,8 +44,10 @@ const HomeForm = () => {
           </div>
           <img
             style={{
+              position: "relative",
               width: "100%",
-              height: "70%",
+              height: "80%",
+              bottom: "0",
               objectFit: "contain",
             }}
             src={recipeImage}
