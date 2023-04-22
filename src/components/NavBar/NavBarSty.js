@@ -68,13 +68,8 @@ export const Button = styled.button`
 `;
 export const Click = styled.ul`
   position: absolute;
-  border: none;
-  background-color: white;
-  border-radius: 3px;
   display: flex;
   flex-direction: column;
-  padding: 0.2rem;
-  box-shadow: 2px 2px 2px 2px gray;
 `;
 export const UserListForm = styled.div`
   position: absolute;
@@ -92,10 +87,21 @@ export const UserListForm = styled.div`
 export const UserList = styled.li`
   padding: 10px 0px;
   list-style: none;
+  background-color: #c7e8ca;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 1px 1.7px 1px gray;
+  color: gray;
+  height: 10px;
+  width: 80px;
+  transition-property: height;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
 
   cursor: pointer;
   &:hover {
-    text-decoration: underline;
-    color: #5d9c59;
+    background-color: #5d9c59;
+    color: white;
+    height: 20px;
   }
 `;

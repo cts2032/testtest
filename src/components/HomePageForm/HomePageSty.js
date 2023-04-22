@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Home = styled.div`
   position: absolute;
-  top: 0;
+  top: 96px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -35,16 +35,18 @@ export const Boards = styled.div`
   margin-left: 32.8%;
 `;
 export const Notice = styled.div`
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
   width: 38%;
   height: 170%;
   text-align: left;
   padding: 1rem;
+  box-shadow: 1px 5px 15px 5px lightgray;
 `;
 
 export const MainRecipe = styled.div`
-  border: 1px solid #ccc;
+  border: none;
+  box-shadow: 1px 5px 10px 5px lightgray;
   border-radius: 5px;
   padding: 1rem;
   width: 38%;

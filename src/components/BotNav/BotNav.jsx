@@ -1,47 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+
 import { Link } from "react-router-dom";
-import logo from "../Image/fook_logo.png";
+import logo from "../Image/fook_logo3.png";
 import { Button } from "../NavBar/NavBarSty";
+import { BnContainer, Brand, LButtonBox, RButtonBox } from "./BotNavSty";
 
-export const Brand = styled.img`
-  height: 10vh;
-  cursor: pointer;
-  z-index: 3;
-  position: absolute;
-  top: 70%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-`;
-export const BnContainer = styled.div`
-  position: absolute;
-
-  bottom: 0;
-  left: 37%;
-  right: 37%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-`;
-export const LButtonBox = styled.div`
-  height: 10vh;
-  width: 50%;
-  border: none;
-
-  border-top-right-radius: 50px;
-  box-shadow: 1px 10px 10px 5px gray;
-  z-index: 1;
-`;
-export const RButtonBox = styled.div`
-  height: 10vh;
-  width: 50%;
-  border: none;
-  border-top-left-radius: 50px;
-  box-shadow: -1px 10px 10px 5px gray;
-  z-index: 1;
-`;
 const BotNav = () => {
   return (
     <>
@@ -50,9 +13,13 @@ const BotNav = () => {
       </Link>
       <BnContainer>
         <LButtonBox>
-          <Button style={{ float: "right" }}>
-            <span class="material-symbols-outlined">person_add</span>
-          </Button>
+          <Link to="/mypage">
+            <Button style={{ float: "right" }}>
+              <span class="material-symbols-outlined">
+                settings_accessibility
+              </span>
+            </Button>
+          </Link>
         </LButtonBox>
 
         <RButtonBox>
