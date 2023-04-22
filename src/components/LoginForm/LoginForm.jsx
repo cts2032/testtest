@@ -31,12 +31,12 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit">로그인</Button>
         <Link
           to="/signup"
           style={{ justifyContent: "center", marginTop: "10px" }}
         >
-          <Button2 type="submit">Regist</Button2>
+          <Button2 type="submit">회원가입</Button2>
         </Link>
       </Form>
     </Container>

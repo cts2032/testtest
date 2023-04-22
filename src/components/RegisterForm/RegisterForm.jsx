@@ -36,26 +36,26 @@ const RegisterForm = () => {
         <Header>회원가입</Header>
         <Input
           type="text"
-          placeholder="Id"
+          placeholder="아이디"
           value={id}
           onChange={(e) => setId(e.target.value)}
           required
         />
         <Input
           type="password"
-          placeholder="Password"
+          placeholder="비밀번호"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <Input
           type="password"
-          placeholder="confrim Password"
+          placeholder="비밀번호 확인"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-        <Button type="submit">Regist</Button>
+        <Button type="submit">회원가입</Button>
       </Form>
     </Container>
   );
