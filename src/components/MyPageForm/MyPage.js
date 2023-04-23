@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const SideMenus = styled.div`
   border: none;
   position: absolute;
+  display: flex;
   top: 135px;
   left: 10;
   border-radius: 5px;
   box-shadow: 2px 1px 1.7px 1px gray;
   height: 68%;
-  width: 200px;
+  width: 10%;
   padding: 1rem 1rem 1rem 0;
 `;
 
@@ -22,7 +23,7 @@ export const InfoButton = styled.li`
   padding: 10px;
   height: 20px;
   overflow: hidden;
-  width: 20px;
+  width: 10%;
   transition-property: width;
   transition-duration: 0.1s;
   transition-timing-function: linear;
@@ -31,7 +32,7 @@ export const InfoButton = styled.li`
     background-color: #5d9c59;
     color: white;
     height: 20px;
-    width: 180px;
+    width: 100%;
   }
 `;
 export const InfoBox = styled.div`
