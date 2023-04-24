@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { Button, Container, Form, Header, Input, Warning } from "./RegisterSty";
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "./Calendar/Calendar.css";
+import styled from "styled-components";
 import axios from "axios";
-import apiServer from "../../api/api";
+import apiServer from "./../../api/api";
 import { useNavigate } from "react-router-dom";
 
 export const RegContainer = styled.form`
@@ -23,16 +27,22 @@ export const RegContainer = styled.form`
 
 const RegisterForm = () => {
   const [username, setUsername] = useState("");
-  const [birthOk, setBirthOk] = useState("");
-  const [phoneOk, setPhoneOk] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phonenumber, setPhoneNumber] = useState("");
-  const [birth, setBirth] = useState("");
   const [idOk, setIdOk] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneOk, setPhoneOk] = useState("");
+  const [birth, setBirth] = useState(new Date());
+  const [birthOk, setBirthOk] = useState("");
   const navigate = useNavigate();
+
+  // const containsSpecialCharacter = (password) => {
+  //   const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;
+  //   return specialCharacterRegex.test(password);
+  // };
+
   const isValidEmail = (username) => {
     const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
     return emailRegex.test(username);
@@ -45,16 +55,17 @@ const RegisterForm = () => {
     const PhoneRegex = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
     return PhoneRegex.test(phonenumber);
   };
-  // /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("Id:", username);
     console.log("Password:", password);
     console.log("Confirm Password:", confirmPassword);
     console.log("name:", name);
-    console.log("PhoneNumber:", phonenumber);
+    console.log("PhoneNumber:", phoneNumber);
     console.log("Email:", email);
     console.log("Birth:", birth);
+
     if (!isValidEmail(email)) {
       alert("올바른 이메일 형식이 아닙니다.");
       return;
@@ -63,13 +74,18 @@ const RegisterForm = () => {
       alert("비밀번호가 일치하지 않습니다.");
       return;
     }
+
+    // if (!containsSpecialCharacter(password)) {
+    //   alert("비밀번호에는 최소 1개의 특수 문자가 포함되어야 합니다.");
+    //   return;
+    // }
     try {
       const response = await axios.post(`${apiServer}/regist/`, {
         username,
         password,
         name,
         email,
-        phonenumber,
+        phoneNumber,
         birth,
       });
       alert("회원가입 성공");
@@ -108,9 +124,7 @@ const RegisterForm = () => {
             type="password"
             placeholder="비밀번호"
             value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
           <Input
@@ -142,7 +156,7 @@ const RegisterForm = () => {
           <Input
             type="text"
             placeholder="전화번호(- 빼고 입력해주세요)"
-            value={phonenumber}
+            value={phoneNumber}
             onChange={(e) => {
               setPhoneNumber(e.target.value);
               if (isValidPhone(e.target.value)) {
@@ -158,25 +172,17 @@ const RegisterForm = () => {
           ) : (
             <div style={{ marginBottom: "10px" }} />
           )}
-          <Input
-            type="text"
-            placeholder="생년월일(yyyy/mm/dd)"
-            value={birth}
-            onChange={(e) => {
-              setBirth(e.target.value);
-              if (isValidBirth(e.target.value)) {
-                setBirthOk(true);
-              } else {
-                setBirthOk(false);
-              }
-            }}
-            required
+          <DatePicker
+            placeholderText="Birth"
+            selected={birth}
+            onChange={(date) => setBirth(date)}
+            showYearDropdown
+            dateFormatCalendar="MMMM"
+            yearDropdownItemNumber={80}
+            scrollableYearDropdown
+            withPortal
+            portalId="root-portal"
           />
-          {!birthOk ? (
-            <Warning>올바른 생년월일이 아닙니다.</Warning>
-          ) : (
-            <div style={{ marginBottom: "10px" }} />
-          )}
           <Button type="submit">회원가입</Button>
         </Form>
       </Container>

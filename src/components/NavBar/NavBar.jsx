@@ -8,25 +8,27 @@ import {
   UserList,
   UserListForm,
 } from "./NavBarSty";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const menuItems = [
     {
       text: "공지사항",
       onClick: () => {
-        window.location.href = "/notice";
+        navigate("/notice");
       },
     },
     {
       text: "인기 레시피",
       onClick: () => {
-        window.location.href = "/board";
+        navigate("/best");
       },
     },
     {
       text: "AI추천",
       onClick: () => {
-        window.location.href = "/ai";
+        navigate("/ai");
       },
     },
   ];

@@ -6,16 +6,16 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import BotNav from "./components/BotNav/BotNav";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import MyPageForm from "./components/MyPageForm/MyPageForm";
-import BoardForm from "./components/BoardForm/BoardForm";
 import NewPost from "./components/BoardForm/NewPost";
+import BestRecipeForm from "./components/BoardForm/BestRecipeForm";
 
 function App() {
   return (
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/board/newposts" element={<NewPost />} />
-        <Route path="/board" element={<BoardForm />} />
+        <Route path="/best/newposts" element={<NewPost />} />
+        <Route path="/best" element={<BestRecipeForm />} />
         <Route path="/mypage" element={<MyPageForm />} />
         <Route path="/signup" element={<RegisterForm />} />
         <Route path="/login" element={<LoginForm />} />
