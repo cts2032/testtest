@@ -14,7 +14,8 @@ const BotNav = () => {
       <BnContainer>
         <LButtonBox>
           <Link to="/mypage">
-            <Button style={{ float: "right" }}>
+            <Button style={{ float: "right", marginRight: "15px" }}>
+              <span>MyPage</span>
               <span class="material-symbols-outlined">
                 settings_accessibility
               </span>
@@ -26,6 +27,7 @@ const BotNav = () => {
           <Link to="/login">
             <Button>
               <span class="material-symbols-outlined">login</span>
+              <span>Login</span>
             </Button>
           </Link>
         </RButtonBox>

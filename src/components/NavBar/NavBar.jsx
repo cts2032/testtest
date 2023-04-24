@@ -13,12 +13,21 @@ const NavBar = () => {
   const menuItems = [
     {
       text: "공지사항",
+      onClick: () => {
+        window.location.href = "/notice";
+      },
     },
     {
       text: "인기 레시피",
+      onClick: () => {
+        window.location.href = "/board";
+      },
     },
     {
       text: "AI추천",
+      onClick: () => {
+        window.location.href = "/ai";
+      },
     },
   ];
 
@@ -36,14 +45,6 @@ const NavBar = () => {
         </button>
       </Search>
       <NavButtons>
-        {/* <Button>
-          <span class="material-symbols-outlined">person_add</span>
-        </Button>
-        <Link to="/login">
-          <Button>
-            <span class="material-symbols-outlined">login</span>
-          </Button>
-        </Link> */}
         <Button>
           <div>
             <ul
